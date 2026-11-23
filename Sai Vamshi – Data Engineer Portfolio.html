@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sai Vamshi – Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF3F6; --surface:#FFFFFF; --ink:#13263A; --muted:#51647A; --line:#C9D6E0; --accent:#2350E8; --warm:#E8A33D;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1B28;--surface:#16273A;--ink:#E6EEF5;--muted:#9FB2C5;--line:#2A3F55;--accent:#7FA2FF;--warm:#F0B95A;}
+}
+:root[data-theme="dark"]{--bg:#0F1B28;--surface:#16273A;--ink:#E6EEF5;--muted:#9FB2C5;--line:#2A3F55;--accent:#7FA2FF;--warm:#F0B95A;}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+nav{display:flex;gap:22px;flex-wrap:wrap;padding:22px 0;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+nav .name{color:var(--ink);font-weight:500;margin-right:auto}
+.hero{padding:56px 0 40px}
+h1{font-size:clamp(2.6rem,8vw,5.2rem);font-weight:800;letter-spacing:-.03em;max-width:12ch}
+.lede{max-width:56ch;color:var(--muted);font-size:1.15rem;margin:22px 0 0}
+.facts{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;font-size:15px}
+.facts span{border:1px solid var(--line);padding:5px 12px;border-radius:999px;background:var(--surface)}
+
+/* pipeline: the one memorable element */
+.pipe{margin:48px 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px 24px}
+.pipe-row{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pipe-row::before{content:"";position:absolute;left:6%;right:6%;top:15px;height:2px;background:var(--line)}
+.pipe-row::after{content:"";position:absolute;left:6%;top:11px;width:10px;height:10px;border-radius:50%;background:var(--warm);animation:flow 3.2s ease-in-out 1 forwards}
+@keyframes flow{to{left:calc(94% - 10px)}}
+.node{position:relative;text-align:center;padding-top:0}
+.dot{width:32px;height:32px;margin:0 auto 12px;border-radius:50%;background:var(--accent);border:4px solid var(--surface);position:relative;z-index:1}
+.node h3{font-size:1.05rem}
+.node .stat{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.6rem;margin-top:8px;color:var(--accent)}
+.node p{margin:2px 0 0;font-size:14px;color:var(--muted);line-height:1.4}
+.pipe-cap{margin:22px 0 0;font-size:14px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.pipe-row::after{display:none}}
+@media (max-width:640px){
+  .pipe-row{grid-template-columns:1fr;gap:26px}
+  .pipe-row::before,.pipe-row::after{display:none}
+}
+
+section{padding:56px 0 8px}
+h2{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
+
+/* timeline: content really is chronological */
+.tl{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 40px 28px}
+.job::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job.now::before{background:var(--accent)}
+.job h3{font-size:1.4rem}
+.job .meta{color:var(--muted);font-size:15px;margin:4px 0 14px}
+.job ul{margin:0;padding-left:20px;max-width:75ch}
+.job li{margin-bottom:8px}
+.job li strong{font-weight:500;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--warm) 45%,transparent) 0)}
+.stack{margin-top:14px;font-size:14px;color:var(--muted)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px 40px}
+.skills h3{font-size:1.1rem;margin-bottom:10px}
+.skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{border:1px solid var(--line);background:var(--surface);padding:4px 12px;border-radius:6px;font-size:15px}
+
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.edu h3{font-size:1.2rem}
+.edu p{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+.contact{padding:56px 0 64px}
+.contact p{max-width:48ch;color:var(--muted);margin:0 0 22px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:500}
+:root[data-theme="dark"] .btn{color:#0F1B28}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0F1B28}}
+footer{border-top:1px solid var(--line);padding:20px 0 28px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Sections">
+    <span class="name">Sai Vamshi</span>
+    <a href="#work">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <h1>I build data pipelines that keep running.</h1>
+    <p class="lede">Data engineer with 4+ years of experience building production pipelines and analytical models in Python, Java, SQL and PySpark, on AWS and Google Cloud. I also build the data quality checks and dashboards that people use to make decisions.</p>
+    <div class="facts">
+      <span>Data Engineer II at PNC</span><span>Boston, MA</span><span>Open to relocation</span>
+    </div>
+
+    <div class="pipe" role="group" aria-label="A data pipeline with results from my work">
+      <div class="pipe-row">
+        <div class="node"><div class="dot"></div><h3>Ingest</h3><div class="stat">10+</div><p>enterprise sources</p></div>
+        <div class="node"><div class="dot"></div><h3>Process</h3><div class="stat">5+ TB</div><p>per month on EMR, Glue and S3</p></div>
+        <div class="node"><div class="dot"></div><h3>Validate</h3><div class="stat">1M+</div><p>records reconciled daily</p></div>
+        <div class="node"><div class="dot"></div><h3>Serve</h3><div class="stat">99%+</div><p>SLA compliance</p></div>
+      </div>
+      <p class="pipe-cap">Figures from my work at Northern Trust.</p>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Experience</h2>
+    <div class="tl">
+      <article class="job now">
+        <h3>Data Engineer II, PNC Financial Services</h3>
+        <div class="meta">USA · Apr 2026 – present</div>
+        <ul>
+          <li>Build production pipelines on Google Cloud Dataproc and BigQuery with Python, Java, SQL and PySpark, <strong>reducing processing latency by 35%</strong>.</li>
+          <li>Develop automated ETL/ELT pipelines in Databricks that bring enterprise data together into analytics-ready datasets.</li>
+          <li>Build dimensional models and dbt transformations in Snowflake, with data quality tests for consistent reporting.</li>
+          <li>Develop governed semantic layers in BigQuery and LookML, using incremental processing and SCD Type 2 to <strong>improve reporting consistency by 30%</strong>.</li>
+          <li>Create Looker dashboards and datasets for executive reporting and self-service analysis.</li>
+          <li>Automate orchestration and observability with Cloud Composer and Apache Airflow.</li>
+          <li>Apply retention policies, PII masking and role-based access control to financial data.</li>
+        </ul>
+        <div class="stack">Python, Java, SQL, PySpark, Dataproc, BigQuery, Cloud Composer, Airflow, Databricks, Snowflake, dbt, Looker, LookML</div>
+      </article>
+
+      <article class="job">
+        <h3>Data Engineer, Northern Trust</h3>
+        <div class="meta">USA · Jan 2024 – Apr 2026</div>
+        <ul>
+          <li>Developed production pipelines on Amazon EMR, AWS Glue and S3 that <strong>process 5+ TB monthly from 10+ enterprise sources</strong>.</li>
+          <li>Loaded data into Apache Iceberg lakehouse tables for downstream reporting and analytics.</li>
+          <li>Built LookML views and semantic layers that standardized business metrics and <strong>sped up stakeholder reporting by 35%</strong>.</li>
+          <li>Automated validation and reconciliation in Python and SQL across 1M+ records a day.</li>
+          <li>Tuned distributed Spark workloads, <strong>cutting pipeline run time by 45%</strong> while holding 99%+ SLA compliance.</li>
+          <li>Implemented retention rules, role-based access control and PII encryption.</li>
+        </ul>
+        <div class="stack">Python, Java, SQL, PySpark, EMR, Glue, S3, Apache Iceberg, Looker, LookML</div>
+      </article>
+
+      <article class="job">
+        <h3>Data Engineer, HCLTech</h3>
+        <div class="meta">India · Jul 2022 – Jul 2023</div>
+        <ul>
+          <li>Built Python, SQL and PySpark ETL pipelines on AWS Glue, EMR and S3 that combine REST API and relational data for BI reporting.</li>
+          <li>Created source-to-target mappings and incremental ingestion workflows with the Glue Data Catalog, plus schema validation and consistency checks.</li>
+          <li><strong>Cut batch runtime by 45%</strong> through Spark partition tuning and SQL query optimization.</li>
+          <li>Automated scheduling, error handling and alerts with Apache Airflow and CloudWatch.</li>
+        </ul>
+        <div class="stack">Python, SQL, PySpark, Glue, Glue Data Catalog, EMR, S3, Airflow, CloudWatch, REST APIs</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><ul><li>Python</li><li>Java</li><li>SQL</li><li>PySpark</li><li>Spark SQL</li><li>Bash</li></ul></div>
+      <div><h3>Data engineering</h3><ul><li>Production pipelines</li><li>ETL/ELT</li><li>Batch processing</li><li>Incremental ingestion</li><li>REST APIs</li><li>Data integration</li></ul></div>
+      <div><h3>Cloud and platforms</h3><ul><li>BigQuery</li><li>Dataproc</li><li>Cloud Composer</li><li>S3</li><li>Glue</li><li>EMR</li><li>Databricks</li><li>Snowflake</li><li>Apache Spark</li><li>Apache Iceberg</li><li>Delta Lake</li></ul></div>
+      <div><h3>Modeling and analytics</h3><ul><li>Dimensional modeling</li><li>SCD Type 2</li><li>dbt</li><li>LookML</li><li>Looker</li><li>Semantic layers</li></ul></div>
+      <div><h3>Orchestration and quality</h3><ul><li>Apache Airflow</li><li>Data validation</li><li>Reconciliation</li><li>Observability</li><li>Alerting</li></ul></div>
+      <div><h3>Engineering and governance</h3><ul><li>Git</li><li>CI/CD</li><li>Unit testing</li><li>Data lineage</li><li>Role-based access control</li><li>PII masking</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu">
+      <div><h3>M.S. Business Analytics</h3><p>University of North Texas, USA · 2023 – 2025</p></div>
+      <div><h3>Bachelor of Technology</h3><p>Jawaharlal Nehru Technological University, Hyderabad, India · 2018 – 2022</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Let’s talk</h2>
+    <p>I’m open to data engineering roles and happy to relocate. Email is the quickest way to reach me.</p>
+    <a class="btn" href="mailto:sai09vamshi@gmail.com">Email Sai Vamshi</a>
+  </section>
+
+  <footer>© 2026 Sai Vamshi</footer>
+</div>
+</body>
+</html>
